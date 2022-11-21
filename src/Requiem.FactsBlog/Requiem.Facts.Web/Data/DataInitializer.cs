@@ -8,7 +8,7 @@ namespace Requiem.Facts.Web.Data
         {
             const string username = "requiem@gmail.com";
             const string phone = "+380000000000";
-            const string password = "12qa43Z05_";
+            const string password = "123qwE!@#";
 
             var scope = serviceProvider.CreateScope();
             await using var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
