@@ -1,0 +1,1 @@
+namespace Calabonga.Facts.Web.ViewModels;

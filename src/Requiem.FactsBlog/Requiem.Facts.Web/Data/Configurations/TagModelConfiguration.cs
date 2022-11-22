@@ -9,6 +9,7 @@ public class TagModelConfiguration : IEntityTypeConfiguration<Tag>
 
         builder.Property(x => x.Id);
         builder.Property(x => x.Name).HasMaxLength(50);
+        builder.Property(x => x.Number);
 
         builder.HasIndex(x => x.Name);
     }

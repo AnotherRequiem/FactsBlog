@@ -8,6 +8,7 @@ public class FactModelConfiguration : IEntityTypeConfiguration<Fact>
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Id);
+        builder.Property(x => x.Number);
         builder.Property(x => x.Content).HasMaxLength(3000).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired();
         builder.Property(x => x.CreatedBy).IsRequired().HasMaxLength(50);
