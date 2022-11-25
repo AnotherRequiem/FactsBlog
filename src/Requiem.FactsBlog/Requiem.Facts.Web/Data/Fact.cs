@@ -6,6 +6,5 @@
 
         public ICollection<Tag> Tags { get; set; }
 
-        public int Number { get; set; }
     }
 }

@@ -9,3 +9,6 @@ global using Microsoft.EntityFrameworkCore.Storage;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.EntityFrameworkCore.Metadata;
 global using Microsoft.EntityFrameworkCore.Migrations;
+global using AutoMapper;
+global using System.Reflection;
+global using Calabonga.UnitOfWork;

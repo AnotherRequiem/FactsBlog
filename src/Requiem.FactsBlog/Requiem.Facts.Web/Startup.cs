@@ -29,6 +29,8 @@ public class Startup
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
+        services.AddAutoMapper(typeof(Startup).Assembly);
+
         services.AddControllersWithViews(); 
     }
 

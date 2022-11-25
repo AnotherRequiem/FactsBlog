@@ -1,4 +1,4 @@
-namespace Calabonga.Facts.Web.ViewModels;
+namespace Requiem.Facts.Web.ViewModels;
 
 public class TagViewModel
 {
