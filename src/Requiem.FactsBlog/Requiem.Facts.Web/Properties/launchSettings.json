@@ -3,11 +3,10 @@
     "Kestrel": {
       "commandName": "Project",
       "launchBrowser": true,
+      "applicationUrl": "https://localhost:7020;http://localhost:7021",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7020;http://localhost:7021"
+      }
     },
     "WSL": {
       "commandName": "WSL2",
@@ -16,8 +15,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_URLS": "https://localhost:7020;http://localhost:7021"
-      },
-      "distributionName": ""
+      }
     }
   }
 }

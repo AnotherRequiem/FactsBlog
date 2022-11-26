@@ -7,6 +7,7 @@
     <UserSecretsId>aspnet-Requiem.Facts.Web-6be45a2a-514a-48ae-ac39-04b0cabae97c</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Kestrel' " />
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
