@@ -1,21 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Requiem.Facts.Web.Data.Base;
 
-namespace Requiem.Facts.Web.Data
+namespace Requiem.Facts.Web.Data;
+
+public class ApplicationDbContext : DbContextBase
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-
-        }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.ApplyConfigurationsFromAssembly(typeof(Startup).Assembly);
-            base.OnModelCreating(builder);
-        }
 
     }
+
+    public DbSet<Fact> Facts { get; set; }
+
+    public DbSet<Tag> Tags { get; set; }
 }

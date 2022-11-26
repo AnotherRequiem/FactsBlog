@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Base\" />
     <Folder Include="Data\Configurations\" />
   </ItemGroup>
 
