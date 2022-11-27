@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Requiem.Facts.Web.Models;
 using System.Diagnostics;
+using Requiem.Facts.Web.Mediatr;
 
 namespace Requiem.Facts.Web.Controllers
 {
     public class SiteController : Controller
     {
+        private readonly IMediator _mediator;
+        public SiteController(IMediator mediator)
+        {
+            _mediator= mediator;
+        }
         public IActionResult Index(int? pageIndex, string tag, string search)
         {
             ViewData["Index"] = pageIndex;
@@ -15,8 +21,10 @@ namespace Requiem.Facts.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Privacy()
         {
+            await _mediator.Publish(new ErrorNotification("Privacy test for notification"), HttpContext.RequestAborted);
+            await _mediator.Publish(new FeedbackNotification("Helloyoursiteiscoolgood"), HttpContext.RequestAborted);
             return View();
         }
 

@@ -1,3 +1,5 @@
+using Calabonga.AspNetCore.Controllers.Extensions;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Requiem.Facts.Web.Data;
 using Serilog;
@@ -20,16 +22,15 @@ public class Startup
             ?? throw new InvalidOperationException
             ("Connection string 'DefaultConnection' not found.");
 
-        services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(connectionString));
+        services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
         services.AddDatabaseDeveloperPageExceptionFilter();
-
-        services.AddDefaultIdentity<IdentityUser>
-            (options => options.SignIn.RequireConfirmedAccount = true)
+        services.AddUnitOfWork<ApplicationDbContext>();
+        services.AddDefaultIdentity<IdentityUser> (options => options.SignIn.RequireConfirmedAccount = true)
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
-        services.AddAutoMapper(typeof(Startup).Assembly);
+        services.AddAutoMapper(typeof(Startup));
+        services.AddCommandAndQueries(typeof(Startup).Assembly);
 
         services.AddControllersWithViews(); 
     }
