@@ -4,17 +4,14 @@ using System.Diagnostics;
 
 namespace Requiem.Facts.Web.Controllers
 {
-    public class HomeController : Controller
+    public class SiteController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult Index(int? pageIndex, string tag, string search)
         {
-            _logger = logger;
-        }
+            ViewData["Index"] = pageIndex;
+            ViewData["Tag"] = tag;
+            ViewData["Search"] = search;
 
-        public IActionResult Index()
-        {
             return View();
         }
 

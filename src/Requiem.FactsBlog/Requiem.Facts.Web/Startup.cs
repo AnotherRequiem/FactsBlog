@@ -42,7 +42,7 @@ public class Startup
         }
         else
         {
-            app.UseExceptionHandler("/Home/Error");
+            app.UseExceptionHandler("/Site/Error");
             
             app.UseHsts();
         }
@@ -57,8 +57,22 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllerRoute(
+                name: "index",
+                pattern: "{controller=Site}/{action=Index}/{tag:regex([a-z¿-ﬂ])}/{search:regex([a-z¿-ﬂ])}/{pageIndex:int?}");
+
+            endpoints.MapControllerRoute(
+                name: "index",
+                pattern: "{controller=Site}/{action=Index}/{tag:regex([a-z¿-ﬂ])}/{pageIndex:int?}");
+
+            endpoints.MapControllerRoute(
+                name: "index",
+                pattern: "{controller=Site}/{action=Index}/{pageIndex:int?}");
+          
+            endpoints.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Site}/{action=Index}/{id?}");
+
+
             endpoints.MapRazorPages();
         });
         
