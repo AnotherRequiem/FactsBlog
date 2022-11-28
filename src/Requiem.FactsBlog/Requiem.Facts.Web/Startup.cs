@@ -31,7 +31,10 @@ public class Startup
 
         services.AddAutoMapper(typeof(Startup));
         services.AddCommandAndQueries(typeof(Startup).Assembly);
-        services.AddWebOptimizer();
+        services.AddWebOptimizer(pipeline =>
+        {
+            pipeline.MinifyCssFiles("css/**/*.css");
+        });
         services.AddControllersWithViews(); 
     }
 
@@ -61,19 +64,19 @@ public class Startup
         {
             endpoints.MapControllerRoute(
                 name: "index",
-                pattern: "{controller=Site}/{action=Index}/{tag:regex([a-z¿-ﬂ])}/{search:regex([a-z¿-ﬂ])}/{pageIndex:int?}");
+                pattern: "{controller=Facts}/{action=Index}/{tag:regex([a-z¿-ﬂ])}/{search:regex([a-z¿-ﬂ])}/{pageIndex:int?}");
 
             endpoints.MapControllerRoute(
                 name: "index",
-                pattern: "{controller=Site}/{action=Index}/{tag:regex([a-z¿-ﬂ])}/{pageIndex:int?}");
+                pattern: "{controller=Facts}/{action=Index}/{tag:regex([a-z¿-ﬂ])}/{pageIndex:int?}");
 
             endpoints.MapControllerRoute(
                 name: "index",
-                pattern: "{controller=Site}/{action=Index}/{pageIndex:int?}");
+                pattern: "{controller=Facts}/{action=Index}/{pageIndex:int?}");
           
             endpoints.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Site}/{action=Index}/{id?}");
+                pattern: "{controller=Facts}/{action=Index}/{id?}");
 
 
             endpoints.MapRazorPages();

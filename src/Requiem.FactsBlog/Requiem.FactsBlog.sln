@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Requiem.Facts.Web", "Requiem.Facts.Web\Requiem.Facts.Web.csproj", "{498190ED-0018-49F4-95D0-16AFCBDF7542}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Requiem.Facts.Web.Tests", "Requiem.Facts.Web.Tests\Requiem.Facts.Web.Tests.csproj", "{F3908FCE-3B71-4A00-AC91-7D5185E6A02D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Requiem.Facts.Web.Tests", "Requiem.Facts.Web.Tests\Requiem.Facts.Web.Tests.csproj", "{F3908FCE-3B71-4A00-AC91-7D5185E6A02D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

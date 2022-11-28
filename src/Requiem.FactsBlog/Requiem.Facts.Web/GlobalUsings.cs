@@ -15,3 +15,6 @@ global using Microsoft.EntityFrameworkCore.Storage;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.EntityFrameworkCore.Metadata;
 global using Microsoft.EntityFrameworkCore.Migrations;
+global using Calabonga.AspNetCore.Controllers;
+global using Calabonga.AspNetCore.Controllers.Base;
+global using Calabonga.OperationResults;
