@@ -31,7 +31,7 @@ public class Startup
 
         services.AddAutoMapper(typeof(Startup));
         services.AddCommandAndQueries(typeof(Startup).Assembly);
-
+        services.AddWebOptimizer();
         services.AddControllersWithViews(); 
     }
 
@@ -47,6 +47,8 @@ public class Startup
             
             app.UseHsts();
         }
+
+        app.UseWebOptimizer();
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
