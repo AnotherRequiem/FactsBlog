@@ -30,6 +30,7 @@
   <ItemGroup>
     <Folder Include="Data\Base\" />
     <Folder Include="Data\Configurations\" />
+    <Folder Include="Infrastructure\TagHelpers\PagedListTagHelper\Base\" />
   </ItemGroup>
 
 </Project>

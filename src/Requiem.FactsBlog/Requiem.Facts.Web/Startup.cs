@@ -1,9 +1,5 @@
-using Calabonga.AspNetCore.Controllers.Extensions;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Requiem.Facts.Web.Data;
-using Serilog;
-using Serilog.Events;
+using Requiem.Facts.Web.Infrastructure.TagHelpers.PagedListTagHelper;
 
 namespace Requiem.Facts.Web;
 
@@ -35,7 +31,10 @@ public class Startup
         {
             pipeline.MinifyCssFiles("css/**/*.css");
         });
-        services.AddControllersWithViews(); 
+        services.AddControllersWithViews();
+
+        // dependency injection
+        services.AddTransient<IPagerTagHelperService, PagerTagHelperService>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
